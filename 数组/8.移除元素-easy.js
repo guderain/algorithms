@@ -13,8 +13,20 @@ function removeElement(nums,val){
     let k = 0;
     for(let i =0;i<nums.length;i++){
         if(nums[i]!==val){
+            // 刚开始没有重复项，相当于把值在原地再插一次，k再右移一位
+            // 如果遍历中有重复项，因为有重复项时k不右移，再遍历到无重复项时把它放到k位置就相当于把前面的重复项删掉了
             nums[k++] = nums[i]
         }
     }
     return k 
 }
+
+var removeElement = function(nums, val) {
+    let k = 0;
+    for(let i = 0;i<nums.length;i++){
+        if(nums[i]!==val){
+            nums[k++] = nums[i]
+        }
+    }
+    return k;
+};

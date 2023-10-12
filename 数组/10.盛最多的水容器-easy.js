@@ -20,3 +20,14 @@ var maxArea = function(height) {
     }
     return maxArea;
 };
+
+function maxArea(h){
+    let max = 0;
+    let r = h.length-1, l = 0;
+    for(let i=0;i<=r;i++){
+        const width = r-l;
+        const height = h[l]<h[r]?h[l++]:h[r--];
+        const max = Math.max(max,width*height)
+    }
+    return max;
+}

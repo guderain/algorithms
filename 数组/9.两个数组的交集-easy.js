@@ -25,3 +25,21 @@ var intersection = function(nums1, nums2) {
     // 题目要求输出数组，所以将 Set 对象转换为数组。
     return Array.from(ansSet);
 };
+
+function repeat(nums1,nums2){
+    let p = 0 , q = 0;
+    let arr = []
+    while(p<nums1.length){
+        while(q<nums2.length){
+            if(nums1[p]===nums2[q]){
+                arr.push(nums1[p])
+                break;
+            }
+            q++;
+        }
+        p++;
+        q=0;
+    }
+    const arrSet = new Set(arr);
+    arrSet.Array.from(arrSet)
+}

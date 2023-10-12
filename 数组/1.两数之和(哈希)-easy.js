@@ -21,6 +21,8 @@
 //         const sum = sortedNums[left] + sortedNums[right];
 //       if (sum === target) {
 //         const leftIndex = nums.indexOf(sortedNums[left]);
+// 数组中可能会有重复的元素，如果使用 nums.indexOf(sortedNums[right])，它只会返回第一个匹配的元素的索引，
+// 而不是最后一个。因此，为了确保返回的是最后一个匹配的元素的索引 使用lastIndexOf
 //         const rightIndex = nums.lastIndexOf(sortedNums[right]);
 //         return [leftIndex, rightIndex];
 //       } else if (sum < target) {
