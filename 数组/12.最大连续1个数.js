@@ -33,3 +33,38 @@ var findMaxConsecutiveOnes = function(nums) {
     count = 0;
     return max;
 };
+
+function findMaxOne(nums1){
+    let count = 0,max = 0;
+    for(let i = 0;i<nums1.length;i++){
+        if(nums1[i]===1){
+            count++;
+        }else{
+            if(count>max){
+                max = count
+            }
+            count = 0;
+        }
+    }
+    if(count>max){
+        max = count
+    }
+}
+
+function findOne(nums){
+    let count = 0, max = 0;
+    for(let i = 0 ;i<nums.length;i++){
+        if(nums[i]===1){
+            count++;
+        }else{
+            if(count>max){
+                max = count;
+            }
+            count = 0;
+        }
+    }
+    if(count>max){
+        max = count;
+    }
+    return max;
+}

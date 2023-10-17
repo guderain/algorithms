@@ -42,3 +42,17 @@ function isSubquence(sub,main){
     }
     return false
 }
+
+function isSubquence(s,t){
+    if(s.length == 0) return true;
+    let sIndex = 0,tIndex = 0;
+    while(tIndex<t.length){
+        if(s[sindex]===t[tIndex]){
+            sIndex++;
+        }
+        if(sIndex>s.length-1){
+            return true;
+        }
+        tIndex++;
+    }
+}

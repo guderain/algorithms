@@ -51,3 +51,19 @@ var minParam = function(target,arr){
     }
     return minLen === Infinity ? 0 : minLen;
 }
+
+function minArray(target,nums){
+    let l=0,r=0;
+    let sum = 0;
+    let minLen = Infinity;
+    while(r<nums.length){
+        sum = sum+nums[r];
+        while(sum>=target){
+            minLen = Math.min(Infinity,r-l+1)
+            sum = sum- nums[l]
+            l++;
+        }
+        r++;
+    }
+    return minLen === Infinity ? 0 : minLen;
+}

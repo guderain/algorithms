@@ -16,3 +16,25 @@ function reverseStr(s){
         right--
     }
 }
+
+var reverseStr = function(s) {
+    let  left = 0, right = s.length-1;
+    while(left<right){
+        let temp = s[right]
+        s[right] = s[left]
+        s[left] = temp
+        left++;
+        right--
+    }
+}
+
+function reverse(s){
+    let l = 0 , r = s.length-1;
+    while(l<r){
+        let temp = s[l];
+        s[l] = s[r]
+        s[r] = temp
+        l++;
+        r--;
+    }
+}

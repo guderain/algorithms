@@ -26,16 +26,28 @@ var removeDuplicates = function(nums) {
             nums[++k] = nums[i];
         }
     }
+    // 返回的是数量，而不是索引
     return k + 1;
 }
 
-function removeDuplicates(nums){
-    let k=0;
-    for(let i=0;i<nums.length;i++){
-        if(nums[i]!==nums[k]){
-            // 如果相等就不管，k不自增，继续遍历，不相等就把它放到k+1位置。相当于把前面相等的元素删掉了
-            // 比如 0 0 1，第一个0和第二个0相等，k不自增，继续遍历，遇到1，把1放到k+1位置，即第二个0的位置，相当于把第一个0删掉了；
-            nums[++k] = nums[i]
+// function removeDuplicates(nums){
+//     let k=0;
+//     for(let i=0;i<nums.length;i++){
+//         if(nums[i]!==nums[k]){
+//             // 如果相等就不管，k不自增，继续遍历，不相等就把它放到k+1位置。相当于把前面相等的元素删掉了
+//             // 比如 0 0 1，第一个0和第二个0相等，k不自增，继续遍历，遇到1，把1放到k+1位置，即第二个0的位置，相当于把第一个0删掉了；
+//             nums[++k] = nums[i]
+//         }
+//     }
+// }
+
+function delRepeat(nums){
+    let r = 0,l=0;
+    while(r<nums.length){
+        if(nums[r]!==nums[l]){
+            nums[++l] = nums[r]
         }
+        r++
     }
+    return l + 1;
 }

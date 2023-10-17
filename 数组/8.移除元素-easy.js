@@ -21,12 +21,25 @@ function removeElement(nums,val){
     return k 
 }
 
-var removeElement = function(nums, val) {
-    let k = 0;
-    for(let i = 0;i<nums.length;i++){
-        if(nums[i]!==val){
-            nums[k++] = nums[i]
-        }
+function removeElement(nums,val){
+    let r = 0;let len = undefined;
+    while(r<nums.length){
+        if(nums[r]==val){
+            /*
+            在移除一个元素后，索引值会向前移动一位，所以在下一次循环时需要继续检查当前位置的元素，以确保没有漏删。
+            在这个例子中，第一个 2 被移除后，后面的元素都向前移动了一位，导致第二个 2 没有被检查到。
+            */ 
+            nums.splice(r,1)
+        }else{
+            /*
+            解决这个问题，可以在移除元素后，不立即增加索引值，而是继续检查当前位置的元素。
+            只有当前位置的元素不等于目标元素时，才增加索引值。确保每个元素都被正确检查和移除。
+            */ 
+            r++
+        };
+        len = nums.length
     }
-    return k;
-};
+    return len;
+}
+removeElement([0,1,2,2,3,0,4,2],2)
+

@@ -41,5 +41,23 @@ function repeat(nums1,nums2){
         q=0;
     }
     const arrSet = new Set(arr);
-    arrSet.Array.from(arrSet)
+    return Array.from(arrSet)
+}
+
+var repeat = function(nums1,nums2){
+    let p = 0,q=0;
+    const arr = [];
+    while(q<nums1.length){
+        while(q<nums2.length){
+            if(nums1[p]===nums2[q]){
+                arr.push(nums1[p])
+                break;
+            }
+            q++;
+        }
+        p++;
+        q=0;
+    }
+    arr1 = new Set(arr)
+    return Array.from(arr1)
 }

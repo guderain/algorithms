@@ -40,21 +40,38 @@ function swap(nums,l,r){
 }
 moveZeroes([1,0,1])
 
+function moveZero(nums){
+    let left = 0,right = 0;
+    while(right<nums.length){
+        if(nums[right]!==0){
+            swap1(nums,left,right)
+            left++;
+        }
+        right++;
+    }
+}
+function swap1(nums,l,r){
+    let temp = nums[l];
+    nums[l] = nums[r];
+    nums[r] = temp;
+}
 
 
-// var moveZeroes = function (nums) {
-//     let j = 0;
-//     for (let i = 0; i < nums.length; i++) {
-//         if (nums[i] !== 0) {//遇到非0元素，让nums[j] = nums[i]，然后j++
-//             nums[j] = nums[i];
-//             j++;
-//         }
-//     }
-//     for (let i = j; i < nums.length; i++) {//剩下的元素全是0
-//         nums[i] = 0;
-//     }
-//     return nums;
-// };
+var moveZero = function(nums){
+    let l=0,r=0;
+    while(r<nums.length){
+        if(nums[r]!=0){
+            swap(nums,l,r)
+            l++;
+        }
+        r++
+    }
+}
+function swap(nums,l,r){
+    let temp = nums[r]
+    nums[r] = nums[l]
+    nums[l] = temp
+}
 
 // 错误
 // function moveZero(nums){

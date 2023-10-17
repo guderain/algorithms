@@ -17,3 +17,7 @@ var reverseWords = function(s) {
     // 4. join(' ') 以空格连接数组元素，返回字符串
     return s.trim().split(/\s+/).reverse().join(' ');
 };
+
+function reverseWords(s){
+    let str = s.trim().split(/\s+/).reverse().join(' ')
+}

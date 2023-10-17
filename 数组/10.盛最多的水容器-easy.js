@@ -31,3 +31,18 @@ function maxArea(h){
     }
     return max;
 }
+
+// 错误解法：只考虑了左边界向右移动，没有考虑右边界向左移动。
+// function maxWater(h){
+//     let l=0,r=h.length-1;
+//     let maxArea = 0;
+//     // 错误地方：只考虑了左边界向右移动，没有考虑右边界向左移动。
+//     // 右边界始终保持在数组的最后一个元素上。因此，计算的最大面积可能会受到右边界位置的限制。
+//     while(l<=r){
+//         const width = r - l;
+//         const height = h[l];
+//         maxArea = Math.max(maxArea,width * height);
+//         l++;
+//     }
+//     return maxArea;
+// }
