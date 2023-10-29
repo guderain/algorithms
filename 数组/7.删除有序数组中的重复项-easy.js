@@ -28,7 +28,8 @@ var removeDuplicates = function(nums) {
     }
     // 返回的是数量，而不是索引
     return k + 1;
-}
+};
+console.log(removeDuplicates([1,1,1,3]));
 
 // function removeDuplicates(nums){
 //     let k=0;
