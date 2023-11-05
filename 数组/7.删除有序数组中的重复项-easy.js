@@ -14,7 +14,7 @@
 
 // 双指针
 var removeDuplicates = function(nums) {
-    let k = 0;
+    let k = 0; // 记录不重复元素的个数
     for(let i = 0; i < nums.length; i++) {
         if(nums[i] !== nums[k]) {                                                
         /*
@@ -29,18 +29,17 @@ var removeDuplicates = function(nums) {
     // 返回的是数量，而不是索引
     return k + 1;
 };
-console.log(removeDuplicates([1,1,1,3]));
 
-// function removeDuplicates(nums){
-//     let k=0;
-//     for(let i=0;i<nums.length;i++){
-//         if(nums[i]!==nums[k]){
-//             // 如果相等就不管，k不自增，继续遍历，不相等就把它放到k+1位置。相当于把前面相等的元素删掉了
-//             // 比如 0 0 1，第一个0和第二个0相等，k不自增，继续遍历，遇到1，把1放到k+1位置，即第二个0的位置，相当于把第一个0删掉了；
-//             nums[++k] = nums[i]
-//         }
-//     }
-// }
+function removeDuplicates(nums){
+    let k=0;
+    for(let i=0;i<nums.length;i++){
+        if(nums[i]!==nums[k]){
+            // 如果相等就不管，k不自增，继续遍历，不相等就把它放到k+1位置。相当于把前面相等的元素删掉了
+            // 比如 0 0 1，第一个0和第二个0相等，k不自增，继续遍历，遇到1，把1放到k+1位置，即第二个0的位置，相当于把第一个0删掉了；
+            nums[++k] = nums[i]
+        }
+    }
+}
 
 function delRepeat(nums){
     let r = 0,l=0;

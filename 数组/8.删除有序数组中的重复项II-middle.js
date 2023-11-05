@@ -12,9 +12,22 @@
 var removeDuplicates = function(nums) {
     if(nums.length < 3) return nums.length;
     let s = 2; // 既是慢指针 也记录重复小于3次的元素的个数
-    // 有序 重复超过两次删，从第三个元素开始遍历
+    // 有序 重复超过两次删，只要判断当前元素和慢指针前两个元素是否相等。i是快指针 从第三个元素开始遍历
     for(let i =2 ;i<nums.length;i++){
+        // 不相等就把当前元素放到慢指针的位置(即删去了重复元素) 慢指针右移
         if(nums[i] !== nums[s-2]){
+            nums[s] = nums[i]
+            s++
+        }
+    }
+    return s
+}
+
+function removeDuplicates(nums){
+    if(nums.length<3)return nums.length;
+    let s = 2;
+    for(let i=2;i<nums.length;i++){
+        if(nums[i]!==nums[s-2]){
             nums[s] = nums[i]
             s++
         }

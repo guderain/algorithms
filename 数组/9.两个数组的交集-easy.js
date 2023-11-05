@@ -44,20 +44,16 @@ function repeat(nums1,nums2){
     return Array.from(arrSet)
 }
 
-var repeat = function(nums1,nums2){
-    let p = 0,q=0;
-    const arr = [];
-    while(q<nums1.length){
-        while(q<nums2.length){
-            if(nums1[p]===nums2[q]){
-                arr.push(nums1[p])
+const repeat = (nums1,nums2)=>{
+    let arr = [];
+    for(let i = 0;i<nums1.length;i++){
+        for(let j = 0;j<nums2.length;j++){
+            if(nums1[i]===nums2[j]){
+                arr.push(nums1[i])
                 break;
             }
-            q++;
         }
-        p++;
-        q=0;
     }
-    arr1 = new Set(arr)
-    return Array.from(arr1)
+    newArr = new Set(arr)
+    return Array.from(newArr)
 }

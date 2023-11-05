@@ -12,6 +12,7 @@ var maxArea = function(height) {
     let maxArea = 0;
     let right = height.length-1;
     let left = 0;
+    // 计算出每次移动后的面积，取最大值
     for(let i =0;i<height.length;i++){
         const width = right-left;
         const minHeight = height[left]<height[right]?height[left++]:height[right--];
@@ -20,6 +21,17 @@ var maxArea = function(height) {
     }
     return maxArea;
 };
+
+const maxArea = (height)=>{
+    let maxArea = 0;
+    let r = height.length-1,l=0;
+    for(let i=0;i<height.length;i++){
+        const width = r-i;
+        const height = height[l]<height[r]?height[l++]:height[r--];
+        maxArea = Math.max(maxArea,width*height)
+    }
+    return maxArea;
+}
 
 function maxArea(h){
     let max = 0;

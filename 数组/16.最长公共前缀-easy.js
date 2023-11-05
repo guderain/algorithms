@@ -24,3 +24,17 @@ var longestCommonPrefix = function(strs) {
     }
     return tmp
 };
+
+function longestCommonPrefix(strs){
+    if(!strs|| strs.length===0) return '';
+    if(strs.length==1) return strs[0];
+    let tmp = strs[0];
+    for(let i = 0;i<strs.length;i++){
+        let j = 0;
+        for(;j<tmp.length && j<strs[i].length;j++){
+            if(tmp[j]!==strs[i][j]) break;
+        }
+        tmp = tmp.slice(0,j)
+    }
+    return tmp
+}
