@@ -25,7 +25,17 @@ const rob = function (nums) {
         // 到达第i间房屋时可以获得的最大金额可以由到达第i-1间房屋时的最大金额（即dp[i-1]）和
         // 到达第i-2间房屋时的最大金额加上第i间房屋的金额（即dp[i-2]+nums[i-1]）中的较大值得出
         dp[i] = Math.max(dp[i-1],dp[i-2]+nums[i-1])
-        // 为什么第i间房屋的金额是nums[i-1]? 因为房屋编号是从1开始的，所以，第i间房屋在数组nums中的索引实际上是i-1
+        // 为什么第i间房屋的金额是nums[i-1]? 索引是从0开始的，第i间房屋在数组nums中的索引实际上是i-1
+    }
+    return dp[nums.length]
+}
+
+const rob1 = (nums) => {
+    const dp = new Array(nums.length+1).fill(0)
+    dp[0] = 0;
+    dp[1] = nums[0];
+    for(let i = 2;i<nums.length;i++){
+        dp[i] = Math.max(dp[i-1],dp[i-2]+nums[i-1])
     }
     return dp[nums.length]
 }

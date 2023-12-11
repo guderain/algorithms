@@ -35,7 +35,8 @@ var minCostClimbingStairs = function(cost) {
     // 题目规则是每次爬一阶或两阶，所以到达第 i 个台阶的最低花费是从第i-1或i-2爬到第i阶的花费cost[i] 
     // 加上到达第i-1 和 第i- 2个台阶的最低花费中的最小值。
         dp[i] = cost[i] + Math.min(dp[i - 2], dp[i - 1])
-    // 因为可以从最后一个台阶或倒数第二个台阶直接到楼顶，不需要有额外花费，所以最后一个台阶和倒数第二个台阶的最低花费都是0
+    // 因为可以从最后一个台阶或倒数第二个台阶直接到楼顶，不需要有额外花费，所以从最后一个台阶和倒数第二个台阶到楼顶的最低花费都是0 
+    // 只用计算到达最后一个台阶和倒数第二个台阶的最低花费即可
     return Math.min(dp[i - 2], dp[i - 1])
 };
 
@@ -46,4 +47,14 @@ const minCost = (cost)=>{
         i++;
     }
     return Math.min(dp[i-2],dp[i-1])
+}
+
+const calCost = (cost)=>{
+    let dp = new Array(cost.length).fill(0);
+    dp[0] = cost[0];
+    dp[1] = cost[1];
+    for(let i=2;i<cost.length;i++){
+        dp[i] = cost[i]+Math.min(dp[i-1],dp[i-2])
+    }
+    return Math.min(dp[i-1],dp[i-2])
 }
